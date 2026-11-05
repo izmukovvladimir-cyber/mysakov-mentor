@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Удача в ноябре по твоему числу</title>
+<meta name="description" content="Прогноз на ноябрь 2026 по личному месяцу: посчитай своё число за 10 секунд и узнай, где тебе в ноябре будет легче всего.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0f1a; --bg2:#1a1d33; --ink:#e6e0d2; --head:#f1e6cc; --gold:#c9a35b; --gold2:#e0bd78;
+  --muted:#a9a291; --dim:#6f6a5d; --line:rgba(201,163,91,.35); --card:rgba(255,255,255,.03);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg)}
+body{font-family:'Onest',sans-serif;color:var(--ink);font-size:17px;line-height:1.6;
+  background:radial-gradient(ellipse 120% 60% at 50% 0%,var(--bg2) 0%,var(--bg) 70%) fixed;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+.serif{font-family:'Playfair Display',serif;font-weight:500}
+.hero{text-align:center;padding:64px 0 36px}
+.kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:'Playfair Display',serif;font-weight:500;color:var(--head);font-size:clamp(38px,9vw,64px);letter-spacing:.06em;line-height:1.1;margin-top:18px}
+.sub{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-size:clamp(18px,4.4vw,22px);margin-top:6px}
+.lead{color:var(--muted);max-width:560px;margin:22px auto 0;font-size:16px}
+.wheel{display:block;margin:34px auto 0;width:min(240px,62vw);height:auto;color:var(--gold)}
+.wheel text{font-family:'Playfair Display',serif;font-size:9px;text-anchor:middle;dominant-baseline:middle;fill:var(--gold)}
+.wheel .on circle.dot{fill:var(--gold2)}
+.wheel .on text{fill:var(--bg);font-weight:600}
+section{padding:34px 0;border-top:1px solid var(--line)}
+h2{font-family:'Playfair Display',serif;font-weight:500;color:var(--gold2);font-size:clamp(24px,5.6vw,30px);line-height:1.25;margin-bottom:14px;display:flex;gap:12px;align-items:baseline}
+h2 .n{font-family:'Onest',sans-serif;font-size:13px;letter-spacing:.12em;color:#8f7a52}
+p{margin-bottom:12px}
+b,.gold{color:var(--gold2);font-weight:600}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 18px;margin-top:8px}
+.calc label{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row select{flex:1 1 120px;min-width:0;background:#11142a;color:var(--head);border:1px solid var(--line);border-radius:10px;padding:12px;font:inherit}
+.row button{flex:1 1 160px;background:var(--gold);color:#14110b;border:0;border-radius:10px;padding:12px 16px;font:600 16px 'Onest',sans-serif;cursor:pointer}
+.out{margin-top:16px;min-height:28px;color:var(--head)}
+.out .big{font-family:'Playfair Display',serif;font-size:40px;color:var(--gold2);line-height:1;vertical-align:-6px;margin:0 6px}
+.how{font-size:15px;color:var(--muted);margin-top:14px}
+.how .f{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:2px 8px;margin:2px 0;color:var(--ink)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:16px 0 10px}
+.cal .w{font-size:11px;letter-spacing:.1em;color:var(--dim);text-align:center;text-transform:uppercase}
+.cal .d{aspect-ratio:1/1;border-radius:10px;background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:15px;color:var(--muted);position:relative}
+.cal .d small{font-size:10px;color:var(--dim)}
+.cal .d.k{border:1px solid var(--gold);color:var(--head);background:rgba(201,163,91,.10)}
+.cal .d.k small{color:var(--gold)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:14px;color:var(--muted)}
+.legend span b{font-family:'Playfair Display',serif;font-size:18px;margin-right:4px}
+.card{background:var(--card);border:1px solid rgba(201,163,91,.22);border-radius:16px;padding:22px 18px;margin-top:16px;scroll-margin-top:16px;transition:border-color .3s,box-shadow .3s}
+.card.hit{border-color:var(--gold2);box-shadow:0 0 0 1px var(--gold2),0 0 40px rgba(224,189,120,.12)}
+.card .top{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.card .num{flex:0 0 auto;width:54px;height:54px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;color:var(--head)}
+.card h3{font-family:'Playfair Display',serif;font-weight:500;color:var(--head);font-size:21px;line-height:1.25}
+.card h3 small{display:block;font-family:'Onest',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.card dl{display:grid;gap:10px}
+.card dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.card dd{margin:2px 0 0}
+.quote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(19px,4.6vw,23px);color:var(--head);text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 4px;margin:8px 0 4px;line-height:1.5}
+.cta{text-align:center;background:linear-gradient(180deg,rgba(201,163,91,.10),rgba(201,163,91,.02));border:1px solid var(--gold);border-radius:18px;padding:30px 20px;margin:10px 0 0}
+.cta h2{justify-content:center;color:var(--head)}
+.cta ul{text-align:left;max-width:460px;margin:6px auto 18px;padding-left:20px}
+.cta li{margin-bottom:6px}
+.cta li::marker{color:var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:#14110b;text-decoration:none;font-weight:600;border-radius:12px;padding:14px 26px}
+footer{text-align:center;color:var(--dim);font-size:13px;padding:40px 0 48px}
+@media (max-width:420px){.cal{gap:4px}.cal .d{font-size:13px;border-radius:8px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Нумерология · ноябрь 2026</div>
+  <h1>УДАЧА В НОЯБРЕ</h1>
+  <div class="sub">по твоему числу</div>
+  <p class="lead">У каждого человека в ноябре своё число месяца. Оно показывает, где тебе сейчас будет легче всего, а где лучше не давить. Посчитать его можно за 10 секунд, ниже покажу как.</p>
+  <svg class="wheel" id="wheel" viewBox="0 0 120 120" aria-hidden="true"></svg>
+</header>
+
+<section>
+  <h2><span class="n">01</span>Посчитай своё число</h2>
+  <p>Нужны только день и месяц твоего рождения. Год рождения тут не участвует.</p>
+  <div class="calc">
+    <label for="dd">Дата рождения</label>
+    <div class="row">
+      <select id="dd" aria-label="День"></select>
+      <select id="mm" aria-label="Месяц"></select>
+      <button id="go" type="button">Показать мой ноябрь</button>
+    </div>
+    <div class="out" id="out"></div>
+    <div class="how">
+      Как это считается руками. Складываешь все цифры дня и месяца рождения, прибавляешь <span class="f">3</span> и сворачиваешь до одной цифры.<br>
+      Пример: 27.02 → 2+7+0+2 = 11, плюс 3 = 14, 1+4 = <b>5</b>. Значит, ноябрь у этого человека живёт по пятёрке.
+    </div>
+  </div>
+  <p class="how">Откуда тройка. 2026 год даёт единицу (2+0+2+6 = 10, 1+0 = 1), а ноябрь, одиннадцатый месяц, даёт двойку. Вместе это 3.</p>
+</section>
+
+<section>
+  <h2><span class="n">02</span>Какие дни выделить</h2>
+  <p>Кроме твоего личного числа у каждого дня есть общее, одно на всех. В ноябре сильнее всего дни с общим числом <b>3</b>, <b>6</b> и <b>8</b>: под договорённости, важные разговоры и запуск того, что давно откладывала.</p>
+  <div class="cal" id="cal"></div>
+  <div class="legend">
+    <span><b class="gold">3</b> 9, 18, 27 ноября: учёба, семья, сделки</span>
+    <span><b class="gold">6</b> 3, 12, 21, 30 ноября: любовь, дом, забота</span>
+    <span><b class="gold">8</b> 5, 14, 23 ноября: работа, деньги, договоры</span>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">03</span>Твой ноябрь по числу</h2>
+  <p>Найди своё число. В каждой карточке три вещи: где удача, что делать и где осторожно.</p>
+
+  <article class="card" id="n1"><div class="top"><div class="num">1</div><h3><small>Число месяца 1</small>Месяц старта</h3></div><dl>
+    <dt>Где удача</dt><dd>В новом. Новая работа, новое дело, новый формат в отношениях. Месяц даёт силы начать и пробить дорогу там, где раньше упиралась.</dd>
+    <dt>Что делать</dt><dd>Бери ответственность на себя и не жди, пока кто-то поможет или подтолкнёт. Решила, значит начинай в этом же месяце.</dd>
+    <dt>Где осторожно</dt><dd>Упрямство и желание, чтобы все смотрели на тебя. Дома это выглядит так: ты всё решила за двоих и обижаешься, что муж не в восторге. Решай за себя, а его зови в своё решение.</dd>
+  </dl></article>
+
+  <article class="card" id="n2"><div class="top"><div class="num">2</div><h3><small>Число месяца 2</small>Месяц близости и паузы</h3></div><dl>
+    <dt>Где удача</dt><dd>В людях рядом. Хорошо налаживать отношения, мириться, договариваться, просить помощи и помогать самой.</dd>
+    <dt>Что делать</dt><dd>Сбавь скорость. Большие запуски перенеси на следующий месяц, а этот потрать на себя и на тех, кто тебе дорог.</dd>
+    <dt>Где осторожно</dt><dd>Сомнения и качели «надо или не надо». В двойку чаще всего хочется всё разорвать: уволиться, развестись, хлопнуть дверью. Такие решения в этом месяце лучше не принимать, дай себе время до декабря.</dd>
+  </dl></article>
+
+  <article class="card" id="n3"><div class="top"><div class="num">3</div><h3><small>Число месяца 3</small>Самый удачный месяц</h3></div><dl>
+    <dt>Где удача</dt><dd>В учёбе, творчестве, семье и деньгах. Тройка один из самых благоприятных периодов: хорошо подписывать договоры, делать крупные покупки, расширять дело.</dd>
+    <dt>Что делать</dt><dd>Вкладывайся в знания, свои или детей, это вернётся. Если что-то не стартовало раньше, запускай сейчас. Больше времени с семьёй и детьми.</dd>
+    <dt>Где осторожно</dt><dd>Спор до надменности, категоричность, лень на фоне успеха. Когда всё идёт легко, тянет доказывать мужу, что ты права. Не трать на это удачу.</dd>
+  </dl></article>
+
+  <article class="card" id="n4"><div class="top"><div class="num">4</div><h3><small>Число месяца 4</small>Месяц доведения до конца</h3></div><dl>
+    <dt>Где удача</dt><dd>В том, что уже начато. Четвёрка любит практичность и последовательность: доделала, закрыла, получила результат.</dd>
+    <dt>Что делать</dt><dd>Составь список хвостов и закрывай по одному. Новые цели пока запиши в блокнот и не хватайся за всё сразу.</dd>
+    <dt>Где осторожно</dt><dd>Суета, ощущение, что не хватает времени и денег, недовольство людьми и чувство несправедливости. Может случаться неожиданное. Держись за то, что уже есть, и не бросай начатое на полпути.</dd>
+  </dl></article>
+
+  <article class="card" id="n5"><div class="top"><div class="num">5</div><h3><small>Число месяца 5</small>Месяц движения и людей</h3></div><dl>
+    <dt>Где удача</dt><dd>В поездках, встречах, разговорах и договорах. Пятёрка даёт новые возможности через людей и хорошо подходит, чтобы выступать и заявлять о себе.</dd>
+    <dt>Что делать</dt><dd>Меняй обстановку, даже если это просто работа из другого места. Знакомься, договаривайся, учись тому, что нравится.</dd>
+    <dt>Где осторожно</dt><dd>Холодность и расчёт, желание, чтобы всё было строго по правилам. В паре это звучит сухо и задевает. Пусть разговоры будут лёгкими, без разборов до трёх ночи.</dd>
+  </dl></article>
+
+  <article class="card" id="n6"><div class="top"><div class="num">6</div><h3><small>Число месяца 6</small>Месяц любви и дома</h3></div><dl>
+    <dt>Где удача</dt><dd>В семье, отношениях и заботе. Шестёрка самый тёплый период: возможности приходят через любовь и через то, что ты отдаёшь близким.</dd>
+    <dt>Что делать</dt><dd>Свидание с мужем, вечер с семьёй, подарки и внимание. И забота о себе: тело, сон, уход. Правило шестёрки простое: когда дома покой, налаживается и всё остальное.</dd>
+    <dt>Где осторожно</dt><dd>Контроль, ревность и страх потерять. Чем крепче держишь, тем больше конфликтов. Заботься, но не управляй.</dd>
+  </dl></article>
+
+  <article class="card" id="n7"><div class="top"><div class="num">7</div><h3><small>Число месяца 7</small>Месяц тишины и ответов</h3></div><dl>
+    <dt>Где удача</dt><dd>Внутри. Семёрка замедляет внешние дела, зато даёт ясность: зачем я так живу, чего хочу дальше, что пора отпустить.</dd>
+    <dt>Что делать</dt><dd>Больше времени наедине с собой: прогулки, дневник, поездка без рабочих целей. Записывай мысли, в декабре они пригодятся.</dd>
+    <dt>Где осторожно</dt><dd>Рискованные дела, долгосрочные обещания и крупные финансовые решения. Если что-то не получается, не дави. Сейчас время думать, действовать будешь в декабре.</dd>
+  </dl></article>
+
+  <article class="card" id="n8"><div class="top"><div class="num">8</div><h3><small>Число месяца 8</small>Месяц большой работы</h3></div><dl>
+    <dt>Где удача</dt><dd>В труде и деньгах. Восьмёрка даёт максимум продуктивности: сколько вложишь сил, столько и получишь. Хорошо договариваться о важном и наводить порядок в финансах.</dd>
+    <dt>Что делать</dt><dd>Не откладывай и не бойся нагрузки. Трать с умом. Спорт поможет держать голову спокойной.</dd>
+    <dt>Где осторожно</dt><dd>Тотальный контроль и недоверие. Хочется загнать всех в свою дисциплину, а потом обвинять, что никто не тянет. Мужу дай его зону и не проверяй каждый шаг.</dd>
+  </dl></article>
+
+  <article class="card" id="n9"><div class="top"><div class="num">9</div><h3><small>Число месяца 9</small>Месяц итогов</h3></div><dl>
+    <dt>Где удача</dt><dd>В завершении. Закрывать сделки, возвращать долги, подводить итоги и планировать следующий круг. Ещё хорошо делиться знаниями и заниматься здоровьем.</dd>
+    <dt>Что делать</dt><dd>Выпиши, что за год получилось, а что пора закончить. Распланируй декабрь заранее, с планом девятка работает намного лучше.</dd>
+    <dt>Где осторожно</dt><dd>Вспыльчивость, страхи и самобичевание за упущенное. Может всплыть старая обида и захотеться резких шагов. Сначала спорт или прогулка, потом разговор.</dd>
+  </dl></article>
+</section>
+
+<section>
+  <p class="quote">Число показывает погоду месяца. Куда идти в эту погоду, решаешь ты сама.</p>
+</section>
+
+<section style="border-top:0">
+  <div class="cta">
+    <h2>Хочешь точнее?</h2>
+    <p>Число месяца это только один слой. В твоей дате рождения есть ещё личный год, жизненный цикл, сильные стороны и места, где ты раз за разом теряешь силы. На личном разборе я собираю всё это вместе и даю план под твою ситуацию.</p>
+    <ul>
+      <li>что тебе несёт этот год и следующий</li>
+      <li>где твоя сила и где ты её сливаешь</li>
+      <li>что делать в ближайшие три месяца</li>
+    </ul>
+    <a class="btn" href="https://t.me/strtok87" target="_blank" rel="noopener">Написать в личные сообщения</a>
+    <p class="how" style="margin-top:12px">Напиши «хочу разбор» и дату рождения, обсудим и договоримся о времени.</p>
+  </div>
+</section>
+
+<footer>Прогноз общий, по дню и месяцу рождения. Личный разбор учитывает всю дату.</footer>
+</div>
+
+<script>
+(function(){
+  var reduce=function(n){while(n>9){n=String(n).split('').reduce(function(a,c){return a+ +c},0)}return n};
+  var digits=function(n){return String(n).split('').reduce(function(a,c){return a+ +c},0)};
+  var dd=document.getElementById('dd'),mm=document.getElementById('mm');
+  var months=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  for(var i=1;i<=31;i++){var o=document.createElement('option');o.value=i;o.textContent=i;dd.appendChild(o)}
+  months.forEach(function(m,k){var o=document.createElement('option');o.value=k+1;o.textContent=m;mm.appendChild(o)});
+
+  // wheel 1..9
+  var w=document.getElementById('wheel'),ns='http://www.w3.org/2000/svg',cx=60,cy=60,R=46;
+  var g=document.createElementNS(ns,'g');g.setAttribute('fill','none');g.setAttribute('stroke','currentColor');g.setAttribute('stroke-width','0.5');
+  [R,56,22].forEach(function(r,k){var c=document.createElementNS(ns,'circle');c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',r);if(k)c.setAttribute('stroke-opacity','.45');g.appendChild(c)});
+  var pts=[];for(var j=0;j<9;j++){var a=-Math.PI/2+j*2*Math.PI/9;pts.push([cx+R*Math.cos(a),cy+R*Math.sin(a)])}
+  var star=document.createElementNS(ns,'polygon');
+  star.setAttribute('points',[0,4,8,3,7,2,6,1,5].map(function(k){return pts[k].join(',')}).join(' '));
+  star.setAttribute('stroke-opacity','.55');g.appendChild(star);w.appendChild(g);
+  var nodes=[];
+  pts.forEach(function(p,k){var n=k===0?9:k;var gg=document.createElementNS(ns,'g');
+    var c=document.createElementNS(ns,'circle');c.setAttribute('class','dot');c.setAttribute('cx',p[0]);c.setAttribute('cy',p[1]);c.setAttribute('r',6.5);c.setAttribute('fill','#0d0f1a');c.setAttribute('stroke','currentColor');c.setAttribute('stroke-width','0.6');
+    var t=document.createElementNS(ns,'text');t.setAttribute('x',p[0]);t.setAttribute('y',p[1]+0.5);t.textContent=n;
+    gg.appendChild(c);gg.appendChild(t);w.appendChild(gg);nodes[n]=gg});
+
+  // calendar Nov 2026: starts Sunday
+  var cal=document.getElementById('cal');
+  ['пн','вт','ср','чт','пт','сб','вс'].forEach(function(x){var e=document.createElement('div');e.className='w';e.textContent=x;cal.appendChild(e)});
+  for(var s=0;s<6;s++){cal.appendChild(document.createElement('div'))}
+  for(var d=1;d<=30;d++){var gn=reduce(digits(d)+1+1+2+0+2+6);var e=document.createElement('div');
+    e.className='d'+([3,6,8].indexOf(gn)>-1?' k':'');e.innerHTML=d+'<small>'+gn+'</small>';cal.appendChild(e)}
+
+  document.getElementById('go').addEventListener('click',function(){
+    var D=+dd.value,M=+mm.value;
+    var n=reduce(digits(D)+digits(M)+3);
+    document.getElementById('out').innerHTML='Твоё число ноября<span class="big">'+n+'</span>';
+    nodes.forEach(function(x){if(x)x.classList.remove('on')});nodes[n].classList.add('on');
+    document.querySelectorAll('.card').forEach(function(c){c.classList.remove('hit')});
+    var card=document.getElementById('n'+n);card.classList.add('hit');
+    setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'start'})},500);
+  });
+})();
+</script>
+</body>
+</html>
