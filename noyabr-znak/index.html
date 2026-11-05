@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Удача в ноябре по твоему знаку</title>
+<meta name="description" content="Прогноз на ноябрь 2026 по знаку зодиака: выбери дату рождения и узнай, где тебе в ноябре будет легче всего.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0f1a; --bg2:#1a1d33; --ink:#e6e0d2; --head:#f1e6cc; --gold:#c9a35b; --gold2:#e0bd78;
+  --muted:#a9a291; --dim:#6f6a5d; --line:rgba(201,163,91,.35); --card:rgba(255,255,255,.03);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg)}
+body{font-family:'Onest',sans-serif;color:var(--ink);font-size:17px;line-height:1.6;
+  background:radial-gradient(ellipse 120% 60% at 50% 0%,var(--bg2) 0%,var(--bg) 70%) fixed;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+.serif{font-family:'Playfair Display',serif;font-weight:500}
+.hero{text-align:center;padding:64px 0 36px}
+.kicker{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:'Playfair Display',serif;font-weight:500;color:var(--head);font-size:clamp(38px,9vw,64px);letter-spacing:.06em;line-height:1.1;margin-top:18px}
+.sub{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-size:clamp(18px,4.4vw,22px);margin-top:6px}
+.lead{color:var(--muted);max-width:560px;margin:22px auto 0;font-size:16px}
+.wheel{display:block;margin:34px auto 0;width:min(240px,62vw);height:auto;color:var(--gold)}
+.wheel text{font-family:'Playfair Display',serif;font-size:8px;text-anchor:middle;dominant-baseline:middle;fill:var(--gold)}
+.wheel .on circle.dot{fill:var(--gold2)}
+.wheel .on text{fill:var(--bg);font-weight:600}
+section{padding:34px 0;border-top:1px solid var(--line)}
+h2{font-family:'Playfair Display',serif;font-weight:500;color:var(--gold2);font-size:clamp(24px,5.6vw,30px);line-height:1.25;margin-bottom:14px;display:flex;gap:12px;align-items:baseline}
+h2 .n{font-family:'Onest',sans-serif;font-size:13px;letter-spacing:.12em;color:#8f7a52}
+p{margin-bottom:12px}
+b,.gold{color:var(--gold2);font-weight:600}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 18px;margin-top:8px}
+.calc label{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row select{flex:1 1 120px;min-width:0;background:#11142a;color:var(--head);border:1px solid var(--line);border-radius:10px;padding:12px;font:inherit}
+.row button{flex:1 1 160px;background:var(--gold);color:#14110b;border:0;border-radius:10px;padding:12px 16px;font:600 16px 'Onest',sans-serif;cursor:pointer}
+.out{margin-top:16px;min-height:28px;color:var(--head)}
+.out .big{font-family:'Playfair Display',serif;font-size:40px;color:var(--gold2);line-height:1;vertical-align:-6px;margin:0 6px}
+.how{font-size:15px;color:var(--muted);margin-top:14px}
+.how .f{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:2px 8px;margin:2px 0;color:var(--ink)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:16px 0 10px}
+.cal .w{font-size:11px;letter-spacing:.1em;color:var(--dim);text-align:center;text-transform:uppercase}
+.cal .d{aspect-ratio:1/1;border-radius:10px;background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:15px;color:var(--muted);position:relative}
+.cal .d small{font-size:10px;color:var(--dim)}
+.cal .d.k{border:1px solid var(--gold);color:var(--head);background:rgba(201,163,91,.10)}
+.cal .d.k small{color:var(--gold)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:14px;color:var(--muted)}
+.legend span b{font-family:'Playfair Display',serif;font-size:18px;margin-right:4px}
+.card{background:var(--card);border:1px solid rgba(201,163,91,.22);border-radius:16px;padding:22px 18px;margin-top:16px;scroll-margin-top:16px;transition:border-color .3s,box-shadow .3s}
+.card.hit{border-color:var(--gold2);box-shadow:0 0 0 1px var(--gold2),0 0 40px rgba(224,189,120,.12)}
+.card .top{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.card .num{flex:0 0 auto;width:54px;height:54px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;color:var(--head)}
+.card h3{font-family:'Playfair Display',serif;font-weight:500;color:var(--head);font-size:21px;line-height:1.25}
+.card h3 small{display:block;font-family:'Onest',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.card dl{display:grid;gap:10px}
+.card dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.card dd{margin:2px 0 0}
+.quote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(19px,4.6vw,23px);color:var(--head);text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 4px;margin:8px 0 4px;line-height:1.5}
+.cta{text-align:center;background:linear-gradient(180deg,rgba(201,163,91,.10),rgba(201,163,91,.02));border:1px solid var(--gold);border-radius:18px;padding:30px 20px;margin:10px 0 0}
+.cta h2{justify-content:center;color:var(--head)}
+.cta ul{text-align:left;max-width:460px;margin:6px auto 18px;padding-left:20px}
+.cta li{margin-bottom:6px}
+.cta li::marker{color:var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:#14110b;text-decoration:none;font-weight:600;border-radius:12px;padding:14px 26px}
+footer{text-align:center;color:var(--dim);font-size:13px;padding:40px 0 48px}
+@media (max-width:420px){.cal{gap:4px}.cal .d{font-size:13px;border-radius:8px}}
+.card .num{font-size:26px}
+.days{display:grid;gap:10px;margin-top:10px}
+.days div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.days div b{display:block;margin-bottom:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Астрология · ноябрь 2026</div>
+  <h1>УДАЧА В НОЯБРЕ</h1>
+  <div class="sub">по твоему знаку</div>
+  <p class="lead">У каждого знака в ноябре своя зона удачи. Ниже все двенадцать знаков: найди свой и прочитай, где тебе в этом месяце будет легче всего и на что обратить внимание.</p>
+  <svg class="wheel" id="wheel" viewBox="0 0 120 120" aria-hidden="true"></svg>
+</header>
+
+<section>
+  <h2><span class="n">01</span>Какие дни выделить</h2>
+  <div class="days">
+    <div><b>До 13 ноября</b>Доделывай начатое, возвращай долги, перепроверяй документы. Если нужно что-то подписать, внимательно прочитай условия.</div>
+    <div><b>С 15 по 20 ноября, особенно 16-е</b>Самые сильные дни месяца. Время просить, предлагать и начинать то, что давно откладывала.</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">02</span>Твой ноябрь по знаку</h2>
+  <p>Найди свой знак по дате рождения. В каждой карточке три вещи: где удача, что делать и где осторожно.</p>
+
+  <article class="card" id="z0"><div class="top"><div class="num">♈︎</div><h3><small>Овен · с 21 марта по 19 апреля</small>Месяц радости</h3></div><dl>
+    <dt>Где удача</dt><dd>Там, где тебе весело: свидания, дети, творчество, любимое хобби. Ноябрь открывает для тебя зону радости, и удача приходит через то, что приносит удовольствие. Когда тебе хорошо, и остальные дела идут легче, а люди рядом тянутся к тебе сами.</dd>
+    <dt>Что делать</dt><dd>Разреши себе удовольствие и не откладывай его на потом. Запланируй вечер вдвоём с мужем, как в начале отношений, без разговоров про быт и детей. Вернись к хобби, которое забросила, или попробуй новое. Если есть дети, придумай с ними что-то творческое, это зарядит вас всех.</dd>
+    <dt>Где осторожно</dt><dd>Азарт и желание всё и сразу. Не трать на развлечения последние деньги и не устраивай проверки чувствам ради эмоций. Ревность «на пустом месте» в этом месяце может вспыхнуть быстро, прежде чем выяснять, остынь хотя бы до утра.</dd>
+  </dl></article>
+  <article class="card" id="z1"><div class="top"><div class="num">♉︎</div><h3><small>Телец · с 20 апреля по 20 мая</small>Месяц дома</h3></div><dl>
+    <dt>Где удача</dt><dd>Дома. Переезд, ремонт, покупка жилья, разговор с родными, который ты давно откладывала. Ноябрь хорошо поддерживает всё, что связано с семьёй и твоими корнями. Дом становится местом силы, если в нём навести порядок, и в вещах, и в отношениях.</dd>
+    <dt>Что делать</dt><dd>Если дома что-то давно хочется поменять, начинай с посильного шага: одна комната, один разговор, одна договорённость. Хорошее время позвонить маме или родным и закрыть старую недосказанность. Сделай дома уголок, где тебе спокойно, даже если это просто кресло и плед.</dd>
+    <dt>Где осторожно</dt><dd>Упрямство «будет по-моему». Перемены дома касаются всех, обсуди их с мужем до того, как начнёшь, иначе ремонт превратится в поле боя. Не тащи на себе всё хозяйство в одиночку и не копи раздражение, проси помощи прямо.</dd>
+  </dl></article>
+  <article class="card" id="z2"><div class="top"><div class="num">♊︎</div><h3><small>Близнецы · с 21 мая по 20 июня</small>Месяц разговоров</h3></div><dl>
+    <dt>Где удача</dt><dd>В разговорах и учёбе. Нужные люди находятся через переписку, короткие поездки и курсы. Ноябрь делает тебя убедительной: слова доходят до людей, и через них приходят новые возможности, знакомства и идеи.</dd>
+    <dt>Что делать</dt><dd>Пиши и звони первой, запишись на обучение, которое давно присмотрела. Скажи вслух то, что держишь в себе, особенно мужу: сейчас такой разговор пройдёт мягче, чем обычно. Хорошо съездить куда-то недалеко на выходные, смена картинки даст свежие мысли.</dd>
+    <dt>Где осторожно</dt><dd>Слов больше, чем дел. Не обещай лишнего и не выясняй отношения в переписке, важное говори голосом и глядя в глаза. Сплетни и пересказы чужих историй в этом месяце могут обернуться против тебя, держи чужие секреты при себе.</dd>
+  </dl></article>
+  <article class="card" id="z3"><div class="top"><div class="num">♋︎</div><h3><small>Рак · с 21 июня по 22 июля</small>Месяц денег</h3></div><dl>
+    <dt>Где удача</dt><dd>В деньгах. Хороший месяц, чтобы поднять цену на свою работу, попросить прибавку или найти ещё один источник дохода. Ноябрь показывает, сколько ты на самом деле стоишь, и помогает поверить, что можешь зарабатывать больше.</dd>
+    <dt>Что делать</dt><dd>Посчитай, сколько ты сейчас зарабатываешь и сколько хочешь. Сделай один конкретный шаг к этой разнице: назови новую цену, напиши начальнику, предложи свою услугу знакомым. Заведи себе отдельные деньги, которыми распоряжаешься только ты, это даст спокойствие.</dd>
+    <dt>Где осторожно</dt><dd>Страх «а вдруг не хватит». Из тревоги легко начать экономить на себе и упрекать мужа тратами. Сначала цифры, потом разговор: сядьте вместе и посмотрите бюджет спокойно, без обвинений. Импульсивные покупки «для настроения» в этом месяце потом расстроят.</dd>
+  </dl></article>
+  <article class="card" id="z4"><div class="top"><div class="num">♌︎</div><h3><small>Лев · с 23 июля по 22 августа</small>Твой месяц</h3></div><dl>
+    <dt>Где удача</dt><dd>У тебя самой. Ты заметнее обычного, тебя слушают, хочется обновить внешность и начать своё. Ноябрь ставит тебя в центр, и это лучший месяц года, чтобы заявить о себе и своих желаниях.</dd>
+    <dt>Что делать</dt><dd>Начинай то, что давно откладывала, и не прячься. Новая стрижка, новый проект, новая роль, всё сейчас. Скажи близким, чего ты хочешь для себя, а не только для семьи. Сфотографируйся, выйди на люди, возьми слово там, где обычно молчишь.</dd>
+    <dt>Где осторожно</dt><dd>Обида, когда близкие не аплодируют. Муж может не заметить твоих перемен сразу, это не значит, что ему всё равно. Скажи ему прямо, что тебе важна его поддержка. И следи, чтобы желание быть первой не превратилось в спор за главенство дома.</dd>
+  </dl></article>
+  <article class="card" id="z5"><div class="top"><div class="num">♍︎</div><h3><small>Дева · с 23 августа по 22 сентября</small>Месяц отдыха</h3></div><dl>
+    <dt>Где удача</dt><dd>В тишине. Может хотеться от всех сбежать и побыть одной, и это нормально. Ноябрь для тебя время перезагрузки: заканчивается старый цикл, и силы копятся для нового, который начнётся с твоего дня рождения.</dd>
+    <dt>Что делать</dt><dd>Дай себе отдохнуть, больше спи, закрой старые дела, на которые хватает сил. Хорошо вести дневник и записывать мысли перед сном, ответы придут сами. Скажи мужу, что тебе нужно немного тишины, чтобы он не принял это на свой счёт.</dd>
+    <dt>Где осторожно</dt><dd>Самокритика и попытка всё успеть через силу. Большие решения перенеси на декабрь, сейчас ты видишь всё мрачнее, чем есть. Старые обиды могут всплыть во снах и мыслях, не выноси их сразу в разговор, сначала разберись, что это на самом деле.</dd>
+  </dl></article>
+  <article class="card" id="z6"><div class="top"><div class="num">♎︎</div><h3><small>Весы · с 23 сентября по 22 октября</small>Месяц друзей</h3></div><dl>
+    <dt>Где удача</dt><dd>В друзьях и знакомых. Помощь может прийти через тех, кого ты давно знаешь. Ноябрь собирает вокруг тебя людей, и через них сбываются планы, которые в одиночку не двигались.</dd>
+    <dt>Что делать</dt><dd>Рассказывай людям о своих планах, проси совета, встречайся. Позови мужа на встречу с друзьями, вам обоим это нужно, общие знакомые сближают пару. Хорошее время вступить в сообщество по интересам или найти единомышленников для своего дела.</dd>
+    <dt>Где осторожно</dt><dd>Желание всем угодить. Не соглашайся на то, чего не хочешь, только чтобы не было конфликта, позже это выйдет усталостью и раздражением. Следи, чтобы друзья не стали поводом уходить от разговоров дома.</dd>
+  </dl></article>
+  <article class="card" id="z7"><div class="top"><div class="num">♏︎</div><h3><small>Скорпион · с 23 октября по 21 ноября</small>Месяц работы</h3></div><dl>
+    <dt>Где удача</dt><dd>В работе. Твою работу могут заметить и оценить. Ноябрь твой месяц, и это видно со стороны: решительность и сила характера сейчас работают на карьеру и репутацию.</dd>
+    <dt>Что делать</dt><dd>Проси повышение, претендуй на более высокую должность, рассказывай о своих результатах. Скромность сейчас мешает. Поставь себе одну большую профессиональную цель до конца года и двигайся к ней каждый день хотя бы маленьким шагом.</dd>
+    <dt>Где осторожно</dt><dd>Работа съедает дом. Если вечерами ты только про задачи, муж это почувствует. Выдели время, когда ты не на работе даже в голове. И осторожно с властностью: дома не подчинённые, приказной тон там вызовет сопротивление.</dd>
+  </dl></article>
+  <article class="card" id="z8"><div class="top"><div class="num">♐︎</div><h3><small>Стрелец · с 22 ноября по 21 декабря</small>Месяц дороги</h3></div><dl>
+    <dt>Где удача</dt><dd>Вдали от дома. Поездка, серьёзная учёба, дела в другом городе или стране. Ноябрь расширяет горизонт: новые знания и новые места дают тебе силы и понимание, куда двигаться дальше.</dd>
+    <dt>Что делать</dt><dd>Планируй поездку или обучение, которое давно откладывала. Хотя бы купи билеты или запишись. Хорошо съездить куда-то вдвоём с мужем, пусть ненадолго, новые места освежают отношения. Читай, слушай, учись тому, что давно интересовало.</dd>
+    <dt>Где осторожно</dt><dd>Побег вместо решения. Если хочется уехать от проблем в паре, они поедут с тобой. Сначала разговор, потом дорога. И не спорь о взглядах и убеждениях до победного, в этом месяце правота может обойтись дороже, чем мир.</dd>
+  </dl></article>
+  <article class="card" id="z9"><div class="top"><div class="num">♑︎</div><h3><small>Козерог · с 22 декабря по 19 января</small>Месяц общих денег</h3></div><dl>
+    <dt>Где удача</dt><dd>В общих деньгах: кредиты, долги, вложения, наследство. Ноябрь помогает навести порядок в том, что вы делите с другими людьми, и закрыть старые финансовые хвосты.</dd>
+    <dt>Что делать</dt><dd>Разберись с долгами и договорись о деньгах с мужем или партнёром. Запиши договорённости, чтобы потом не спорить. Хорошее время пересмотреть кредиты, рефинансировать или закрыть один из них. Если кто-то должен тебе, напомни спокойно и конкретно.</dd>
+    <dt>Где осторожно</dt><dd>Новые кредиты и вложения без расчёта. Сначала посчитай, потом подписывай. Деньги в паре в этом месяце острая тема: не используй их как способ контроля и не молчи, если что-то не устраивает.</dd>
+  </dl></article>
+  <article class="card" id="z10"><div class="top"><div class="num">♒︎</div><h3><small>Водолей · с 20 января по 18 февраля</small>Месяц отношений</h3></div><dl>
+    <dt>Где удача</dt><dd>В отношениях и договорённостях. Есть шанс встретить человека для отношений или совместного дела. Ноябрь освещает тему партнёрства, и всё, что делаешь вдвоём, получается лучше, чем в одиночку.</dd>
+    <dt>Что делать</dt><dd>Соглашайся на встречи. Если ты в паре, обсудите, чего каждый ждёт от другого, сейчас такой разговор пройдёт легче. Хорошо заключать договоры и браться за совместные проекты. Сделай для мужа что-то, о чём он давно просил.</dd>
+    <dt>Где осторожно</dt><dd>Невнимательность к деталям. Читай договоры перед подписанием и не соглашайся на то, что не понимаешь. В отношениях может тянуть доказывать свою независимость, не путай свободу с холодностью.</dd>
+  </dl></article>
+  <article class="card" id="z11"><div class="top"><div class="num">♓︎</div><h3><small>Рыбы · с 19 февраля по 20 марта</small>Месяц порядка</h3></div><dl>
+    <dt>Где удача</dt><dd>В ежедневных делах: на работе, в режиме, в здоровье. Ноябрь помогает выстроить порядок, и маленькие ежедневные шаги дают заметный результат уже к концу месяца.</dd>
+    <dt>Что делать</dt><dd>Наведи порядок в рабочих задачах, наладь сон и запишись к врачу, к которому давно собиралась. Заведи одну полезную привычку и держи её 30 дней. Раздели с мужем домашние дела по списку, так меньше поводов для обид.</dd>
+    <dt>Где осторожно</dt><dd>Взять на себя всё за всех. Если тянешь дом в одиночку, раздели обязанности, иначе к декабрю сил не останется. Тревога за здоровье может разрастаться в голове, лучше проверься и успокойся фактами.</dd>
+  </dl></article>
+</section>
+
+<section>
+  <p class="quote">Звёзды показывают время. Шаг делаешь ты сама.</p>
+</section>
+
+<section style="border-top:0">
+  <div class="cta">
+    <h2>Хочешь точнее?</h2>
+    <p>Это общая картина по знаку. По полной дате рождения видно гораздо больше: твой личный год, сильные стороны и места, где ты раз за разом теряешь силы. На личной консультации я разбираю всю дату и делаю расклад Таро на твою ситуацию.</p>
+    <ul>
+      <li>что тебе несёт этот год и следующий</li>
+      <li>где твоя сила и где ты её сливаешь</li>
+      <li>что делать в ближайшие три месяца</li>
+    </ul>
+    <a class="btn" href="https://t.me/strtok87" target="_blank" rel="noopener">Написать в личные сообщения</a>
+    <p class="how" style="margin-top:12px">Напиши «хочу разбор» и дату рождения, обсудим и договоримся о времени.</p>
+  </div>
+</section>
+
+<footer>Прогноз общий, по знаку зодиака. Личный разбор учитывает всю дату.</footer>
+</div>
+
+<script>
+(function(){
+  var names=['Овен', 'Телец', 'Близнецы', 'Рак', 'Лев', 'Дева', 'Весы', 'Скорпион', 'Стрелец', 'Козерог', 'Водолей', 'Рыбы'];
+  var glyphs=['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓'];
+  // start (month, day) of each sign, Aries first
+  var starts=[[3,21],[4,20],[5,21],[6,21],[7,23],[8,23],[9,23],[10,23],[11,22],[12,22],[1,20],[2,19]];
+  function sign(D,M){var v=M*100+D,best=9;/* Capricorn wraps */
+    for(var k=0;k<12;k++){var s=starts[k][0]*100+starts[k][1];var e=starts[(k+1)%12][0]*100+starts[(k+1)%12][1];
+      if(s<e?(v>=s&&v<e):(v>=s||v<e)){best=k;break}}return best}
+  var w=document.getElementById('wheel'),ns='http://www.w3.org/2000/svg',cx=60,cy=60,R=46;
+  var g=document.createElementNS(ns,'g');g.setAttribute('fill','none');g.setAttribute('stroke','currentColor');g.setAttribute('stroke-width','0.5');
+  [R,56,22].forEach(function(r,k){var c=document.createElementNS(ns,'circle');c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',r);if(k)c.setAttribute('stroke-opacity','.45');g.appendChild(c)});
+  w.appendChild(g);var nodes=[];
+  for(var j=0;j<12;j++){var a=-Math.PI/2+j*2*Math.PI/12,x=cx+R*Math.cos(a),y=cy+R*Math.sin(a);var gg=document.createElementNS(ns,'g');
+    var c=document.createElementNS(ns,'circle');c.setAttribute('class','dot');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',6.5);c.setAttribute('fill','#0d0f1a');c.setAttribute('stroke','currentColor');c.setAttribute('stroke-width','0.6');
+    var t=document.createElementNS(ns,'text');t.setAttribute('x',x);t.setAttribute('y',y+0.5);t.textContent=glyphs[j]+'\uFE0E';
+    gg.appendChild(c);gg.appendChild(t);w.appendChild(gg);nodes.push(gg)}
+})();
+</script>
+</body>
+</html>
